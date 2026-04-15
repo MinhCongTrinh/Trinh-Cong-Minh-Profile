@@ -12,6 +12,7 @@ const TARGET_TS = path.join(ROOT, 'src', 'lib', 'data.ts');
 
 try {
   const config = yaml.load(fs.readFileSync(CONFIG_YAML, 'utf8'));
+  fs.mkdirSync(path.dirname(TARGET_TS), { recursive: true });
   
   const content = `// This file is auto-generated from config.yaml. Do not edit directly.
 export const siteConfig = ${JSON.stringify(config.site, null, 2)};

@@ -12,7 +12,10 @@ export function MusicSection() {
     }
 
     const { featuredTrack, musicTracks } = music;
-    const allTracks = [featuredTrack, ...(musicTracks || [])];
+    const allTracks = [featuredTrack, ...(musicTracks || [])].map((track) => ({
+        badge: 'Track',
+        ...track,
+    }));
 
     const [isPlaying, setIsPlaying] = useState(false);
     const [activeTrack, setActiveTrack] = useState(allTracks[0]);
@@ -107,7 +110,7 @@ export function MusicSection() {
                                         <div className={`w-2 h-2 rounded-full ${isCurrent ? 'bg-primary' : 'bg-transparent'}`} />
                                         <div>
                                             <h4 className="text-white font-semibold text-[16px] mb-1">{track.title}</h4>
-                                            <p className="text-white/50 text-[13px] font-light">{track.badge || 'Track'}</p>
+                                            <p className="text-white/50 text-[13px] font-light">{track.badge}</p>
                                         </div>
                                     </div>
 
