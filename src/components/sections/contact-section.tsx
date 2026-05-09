@@ -5,6 +5,10 @@ import { Mail } from 'lucide-react';
 import { contact_link } from '@/lib/data';
 
 export function ContactSection() {
+    if (!contact_link) {
+        return null;
+    }
+
     return (
         <section id="contact" className="w-full flex flex-col md:scroll-mt-32 items-center pt-12">
             <motion.div

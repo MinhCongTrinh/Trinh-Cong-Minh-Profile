@@ -10,17 +10,34 @@ const ROOT = path.join(__dirname, '..');
 const CONFIG_YAML = path.join(ROOT, 'config.yaml');
 const TARGET_TS = path.join(ROOT, 'src', 'lib', 'data.ts');
 
+function cleanData(obj) {
+  if (Array.isArray(obj)) {
+    return obj
+      .filter(item => item !== null && item !== undefined && item !== '')
+      .map(cleanData);
+  } else if (typeof obj === 'object' && obj !== null) {
+    const cleaned = {};
+    for (const [key, value] of Object.entries(obj)) {
+      cleaned[key] = cleanData(value);
+    }
+    return cleaned;
+  }
+  return obj;
+}
+
 try {
-  const config = yaml.load(fs.readFileSync(CONFIG_YAML, 'utf8'));
+  let config = yaml.load(fs.readFileSync(CONFIG_YAML, 'utf8'));
+  config = cleanData(config);
+  
   fs.mkdirSync(path.dirname(TARGET_TS), { recursive: true });
   
   const content = `// This file is auto-generated from config.yaml. Do not edit directly.
-export const siteConfig = ${JSON.stringify(config.site, null, 2)};
-export const projects = ${JSON.stringify(config.projects, null, 2)};
-export const experience = ${JSON.stringify(config.experience, null, 2)};
-export const education = ${JSON.stringify(config.education, null, 2)};
-export const awards = ${JSON.stringify(config.awards, null, 2)};
-export const skills = ${JSON.stringify(config.skills, null, 2)};
+export const siteConfig = ${JSON.stringify(config.site || {}, null, 2)};
+export const projects = ${JSON.stringify(config.projects || [], null, 2)};
+export const experience = ${JSON.stringify(config.experience || [], null, 2)};
+export const education = ${JSON.stringify(config.education || {}, null, 2)};
+export const awards = ${JSON.stringify(config.awards || [], null, 2)};
+export const skills = ${JSON.stringify(config.skills || [], null, 2)};
 export const about_details = ${JSON.stringify(config.about_details || [], null, 2)};
 export const music = ${JSON.stringify(config.music || null, null, 2)};
 export const contact_link = ${JSON.stringify(config.contact_link || null, null, 2)};

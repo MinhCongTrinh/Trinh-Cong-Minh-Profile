@@ -1,21 +1,41 @@
 'use client';
 
 import Link from 'next/link';
-import { Github, Youtube, Music, Menu, X } from 'lucide-react';
+import { Github, Youtube, Music, Menu, X, Cpu } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { siteConfig } from '@/lib/data';
+import { siteConfig, music, about_details, projects, experience, education, skills, awards, contact_link } from '@/lib/data';
 import { ThemeToggle } from './theme-toggle';
 
-const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Resume', href: '#resume' },
-    { name: 'Music', href: '#music' },
-    { name: 'Contact', href: '#contact' },
-];
-
 export function Navbar() {
+    // Dynamically build navItems based on config
+    const navItems: { name: string; href: string }[] = [];
+    
+    if (about_details && about_details.length > 0) {
+        navItems.push({ name: 'About', href: '#about' });
+    }
+    if (projects && projects.length > 0) {
+        navItems.push({ name: 'Projects', href: '#projects' });
+    }
+    
+    const hasResume = (experience && experience.length > 0) || 
+                      (education && Object.keys(education).length > 0) || 
+                      (skills && skills.length > 0) || 
+                      (awards && awards.length > 0);
+    if (hasResume) {
+        navItems.push({ name: 'Resume', href: '#resume' });
+    }
+
+    // Check if music config is valid
+    const hasMusic = music && (music as any).featuredTrack && (music as any).featuredTrack.src;
+    if (hasMusic) {
+        navItems.push({ name: 'Music', href: '#music' });
+    }
+    
+    if (contact_link) {
+        navItems.push({ name: 'Contact', href: '#contact' });
+    }
+    
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
 
@@ -45,9 +65,9 @@ export function Navbar() {
                 <div className="flex items-center justify-between h-full">
                     
                     <div className="flex items-center gap-3">
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#00bfff]" />
+                        <Cpu className="w-6 h-6 text-[#00bfff]" />
                         <Link href="/" className="font-bold text-xl text-foreground tracking-tight hover:opacity-80 transition-opacity">
-                            {siteConfig.name}
+                            {siteConfig.name ? `${siteConfig.name} Portfolio` : "Portfolio"}
                         </Link>
                     </div>
 
@@ -74,7 +94,9 @@ export function Navbar() {
                         {siteConfig.youtube && (
                             <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors"><Youtube size={20} /></a>
                         )}
-                        <a href="#music" className="hover:text-foreground transition-colors"><Music size={18} /></a>
+                        {hasMusic && (
+                            <a href="#music" className="hover:text-foreground transition-colors"><Music size={18} /></a>
+                        )}
                         <ThemeToggle />
                     </div>
 

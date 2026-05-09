@@ -5,8 +5,8 @@ import { Footer } from "@/components/layout/footer";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Antigravity Portfolio",
-  description: "A modern, high-performance portfolio website.",
+  title: "Trinh Cong Minh Portfolio",
+  description: "Mathematics Student & Robotics Enthusiast. Passionate about applying mathematical principles to build intelligent robotic systems.",
 };
 
 export default function RootLayout({

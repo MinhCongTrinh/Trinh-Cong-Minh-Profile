@@ -13,19 +13,23 @@ export function Hero() {
                 transition={{ duration: 0.6 }}
                 className="flex-1 flex flex-col items-start w-full"
             >
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-white dark:bg-card text-xs font-semibold text-muted tracking-wider mb-8 shadow-sm">
-                    <div className="w-2 h-2 rounded-full bg-[#00bfff]" />
-                    {siteConfig.location.toUpperCase()} — {siteConfig.company.toUpperCase()}
-                </div>
+                {(siteConfig.location || siteConfig.company) && (
+                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-white dark:bg-card text-xs font-semibold text-muted tracking-wider mb-8 shadow-sm">
+                        <div className="w-2 h-2 rounded-full bg-[#00bfff]" />
+                        {[siteConfig.location, siteConfig.company].filter(Boolean).map(s => s.toUpperCase()).join(' — ')}
+                    </div>
+                )}
 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] text-foreground tracking-tight mb-6">
-                    Hi, I'm {siteConfig.name}.<br />
+                    Hi, I'm {siteConfig.name || "there"}.<br />
                     <span className="primary-gradient-text">I design & build things.</span>
                 </h1>
 
-                <p className="text-[17px] md:text-lg text-muted font-light leading-relaxed max-w-[480px] mb-10">
-                    {siteConfig.bio}
-                </p>
+                {siteConfig.bio && (
+                    <p className="text-[17px] md:text-lg text-muted font-light leading-relaxed max-w-[480px] mb-10">
+                        {siteConfig.bio}
+                    </p>
+                )}
 
                 <a 
                     href="#projects"

@@ -5,6 +5,10 @@ import { about_details } from '@/lib/data';
 import * as Icons from 'lucide-react';
 
 export function AboutSection() {
+    if (!about_details || about_details.length === 0) {
+        return null;
+    }
+
     return (
         <section id="about" className="w-full flex md:scroll-mt-32 items-center flex-col pt-12">
             <motion.div

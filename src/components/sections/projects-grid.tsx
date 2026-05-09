@@ -19,6 +19,10 @@ type Project = {
 export function ProjectsGrid() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
+    if (!projects || projects.length === 0) {
+        return null;
+    }
+
     return (
         <section id="projects" className="w-full flex flex-col md:scroll-mt-32 items-center pt-12">
             <motion.div
