@@ -1,100 +1,101 @@
 site:
-  name: "John Doe"
-  username: "johndoe"
-  bio: "Full Stack Developer & Designer. Passionate about building clean, modern web applications."
-  about_title: "Hello, I'm John! 👋"
-  about_summary: "I am a software engineer with a passion for creating beautiful and functional user interfaces. I love solving complex problems and learning new technologies."
-  avatar: "/placeholder.svg"
-  location: "San Francisco, CA"
-  company: "Freelance"
-  email: "hello@johndoe.com"
-  website: "johndoe.com"
-  twitter: "@johndoe"
-  github: "https://github.com/johndoe"
-  youtube: "https://youtube.com/@johndoe"
-  stats:
-    followers: "500"
-    following: "300"
+  name: "Trinh Cong Minh"
+  username: "congminh"
+  bio: "Mathematics student and robotics enthusiast passionate about applying mathematical thinking to intelligent systems and real-world engineering problems."
+  about_title: "Hi, I'm Minh! 👋"
+  about_summary: "I am a mathematics major at Nguyen Trai High School for the Gifted with a strong interest in robotics, embedded systems, and AI. I enjoy combining mathematical thinking with software and hardware to build intelligent real-world systems."
+  avatar: "/images/z7223527699848_afdc486bb26145110c65c4b5db7815fd.jpg"
+  location: "Hai Phong, Vietnam"
+  company: "Independent Developer"
+  email: "minh.chuyentoanhd@gmail.com"
+  website: "https://minhcongtrinh.github.io/Trinh-Cong-Minh-Profile/"
+  github: "https://github.com/MinhCongTrinh"
+
   achievements:
-    - emoji: "🚀"
-      title: "Fast Learner"
-    - emoji: "✨"
-      title: "Clean Code"
-    - emoji: "🎨"
-      title: "UI Enthusiast"
+    - emoji: "🏆"
+      title: "WRO Prize Winner"
+    - emoji: "🤖"
+      title: "Robotics Competitor"
+    - emoji: "⚙️"
+      title: "Embedded Systems Developer"
+    - emoji: "🧮"
+      title: "Mathematics Specialist"
 
 projects:
   - id: "1"
-    title: "Awesome Project One"
-    description: "A comprehensive web application built with React, Next.js, and Tailwind CSS."
-    tags: ["React", "Next.js", "Tailwind"]
-    slug: "awesome-project-one"
-    image: "/placeholder.svg"
+    title: "Mathematical Visualization Tool"
+    description: "An interactive application for visualizing calculus concepts, graph algorithms, and geometric transformations using modern visualization techniques."
+    tags: ["Mathematics", "Data Visualization", "Python"]
+    slug: "math-visualization"
+    image: "/images/z6956728320494_815bdbcde582f8d063e1e9ac4b4eb36f.jpg"
     link: "https://github.com"
+
   - id: "2"
-    title: "Project Two - Mobile First"
-    description: "A responsive mobile-first application designed for modern devices."
-    tags: ["Mobile", "UX Design", "Flutter"]
-    slug: "project-two"
-    image: "/placeholder.svg"
+    title: "AI Robot Controller"
+    description: "A robotics control system integrating AI algorithms with embedded hardware for autonomous robot navigation and control."
+    tags: ["AI", "Python", "Robotics", "Embedded Systems"]
+    slug: "ai-robot-controller"
+    image: "/images/z7223527687823_03366d4096162e7b666c8e967f5b8a05.jpg"
     link: "https://github.com"
 
 experience:
   - id: "1"
-    title: "Senior Developer"
-    role: "Lead Engineer"
+    title: "Student Leader"
+    role: "Class Monitor"
     date: "Jan 2023 - Present"
-    points: 
-      - "Developed and maintained multiple high-traffic web applications."
-      - "Collaborated with cross-functional teams to deliver high-quality software."
+    points:
+      - "Managed and coordinated academic and extracurricular activities at Nguyen Trai High School for the Gifted."
+      - "Organized study groups and supported peers in advanced mathematics and science."
+      - "Participated in the school robotics team and competed in national and international robotics competitions."
 
 education:
-  school: "University of Tech"
-  date: "Graduated 2022"
-  stats: ["GPA 3.8", "Computer Science Major"]
+  school: "Nguyen Trai High School for the Gifted"
+  date: "2021 - 2024"
+  stats:
+    - "Mathematics Major"
+    - "GPA 3.8"
 
 awards:
-  - "Employee of the Month (March 2024)"
-  - "Open Source Contributor Award"
+  - "Second Prize — World Robot Olympiad (WRO) China 2025"
+  - "Third Prize — World Robot Olympiad (WRO) Vietnam 2025"
 
 skills:
-  - "TypeScript"
-  - "React"
-  - "Next.js"
-  - "Node.js"
-  - "Python"
-  - "SQL"
-  - "UI/UX Design"
+  - "Advanced Mathematics"
+  - "Python, C++, Embedded Systems"
+  - "Robotics Design & Control Systems"
+  - "AI & Autonomous Systems"
 
 about_details:
   - title: "My Mission"
     icon: "Target"
     type: "text"
-    content: "To build software that makes a real difference in people's lives through intuitive design and robust engineering."
-  - title: "Interests"
+    content: "To build intelligent systems that combine mathematics, AI, and robotics to solve practical real-world problems."
+
+  - title: "Interests & Passions"
     icon: "Heart"
     type: "list"
     items:
-      - title: "Open Source"
-        description: "Contributing to various libraries and frameworks."
-      - title: "Travel"
-        description: "Exploring new cultures and meeting creative people."
+      - title: "Robotics"
+        description: "Designing, building, and programming competitive robotics systems."
+
+      - title: "Applied Mathematics"
+        description: "Exploring how mathematical models can improve intelligent systems and AI."
+
+      - title: "Embedded Systems"
+        description: "Working with hardware-software integration for robotics and automation."
 
 music:
   featuredTrack:
     id: "track-1"
-    title: "Ambient Vibes"
-    badge: "Chill"
-    description: "A calming ambient track for focused work."
+    title: "Deep Focus Flow"
+    badge: "Study"
+    description: "A calming ambient track for focused math and coding sessions."
     src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+
   musicTracks:
     - id: "track-2"
-      title: "Cyberpunk Beat"
-      description: "Energetic synthwave track."
+      title: "Robotic Rhythms"
+      description: "Electronic beats for robotics building and experimentation."
       src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-    - id: "track-3"
-      title: "Deep House Mix"
-      description: "Smooth deep house for relaxing."
-      src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
 
-contact_link: "mailto:hello@johndoe.com"
+contact_link: "minh.chuyentoanhd@gmail.com"
