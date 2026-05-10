@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[39756,["/Trinh-Cong-Minh-Profile/_next/static/chunks/0h.9iis9-5p82.js","/Trinh-Cong-Minh-Profile/_next/static/chunks/0blwausyh-r5..js","/Trinh-Cong-Minh-Profile/_next/static/chunks/0fj5i755jposg.js"],"default"]
+3:I[37457,["/Trinh-Cong-Minh-Profile/_next/static/chunks/0h.9iis9-5p82.js","/Trinh-Cong-Minh-Profile/_next/static/chunks/0blwausyh-r5..js","/Trinh-Cong-Minh-Profile/_next/static/chunks/0fj5i755jposg.js"],"default"]
+4:[]
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"NCVl-kf-3BNeUw67rB05F"}

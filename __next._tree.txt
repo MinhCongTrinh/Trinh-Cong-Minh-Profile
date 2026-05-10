@@ -1,0 +1,2 @@
+:HL["/Trinh-Cong-Minh-Profile/_next/static/chunks/1300bwb-qsh2r.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"NCVl-kf-3BNeUw67rB05F"}
