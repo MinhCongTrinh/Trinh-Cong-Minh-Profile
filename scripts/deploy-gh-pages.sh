@@ -66,6 +66,14 @@ trap cleanup EXIT
 
 echo "Building static site from main..."
 rm -rf "$REPO_ROOT/out"
+
+# Reinstall node_modules if they were built on a different platform (e.g. Windows -> WSL)
+LIGHTNINGCSS_NODE="$REPO_ROOT/node_modules/lightningcss-linux-x64-gnu"
+if [[ "$(uname -s)" == "Linux" ]] && [[ ! -d "$LIGHTNINGCSS_NODE" ]]; then
+  echo "Detected cross-platform node_modules (Windows → Linux). Reinstalling dependencies..."
+  (cd "$REPO_ROOT" && rm -rf node_modules package-lock.json && npm install)
+fi
+
 (cd "$REPO_ROOT" && npm run build)
 
 if [[ ! -f "$REPO_ROOT/out/index.html" ]]; then

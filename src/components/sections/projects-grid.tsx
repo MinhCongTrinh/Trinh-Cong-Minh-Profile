@@ -61,7 +61,7 @@ export function ProjectsGrid() {
                         <div className="p-6 md:p-8 flex flex-col flex-1">
                             <div className="flex items-center justify-between mb-4">
                                 <div className="w-10 h-10 rounded-full border border-border bg-[#f8f9fa] flex items-center justify-center text-muted">
-                                    {project.tags.includes('C++') || project.tags.includes('Software') ? <Code size={18} /> : <Cpu size={18} />}
+                                    {(project.tags || []).includes('C++') || (project.tags || []).includes('Software') ? <Code size={18} /> : <Cpu size={18} />}
                                 </div>
                                 <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center text-muted group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
                                     <ArrowUpRight size={14} />
@@ -108,7 +108,7 @@ export function ProjectsGrid() {
                             <div className="p-8 md:p-10 overflow-y-auto max-h-[50vh]">
                                 <h2 className="text-3xl font-bold text-foreground mb-4">{selectedProject.title}</h2>
                                 <div className="flex flex-wrap gap-2 mb-8">
-                                    {selectedProject.tags.map(t => (
+                                    {(selectedProject.tags || []).map(t => (
                                         <span key={t} className="px-3 py-1 bg-accent rounded-full text-xs font-semibold text-muted">
                                             {t}
                                         </span>

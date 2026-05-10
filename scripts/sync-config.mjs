@@ -32,15 +32,84 @@ try {
   fs.mkdirSync(path.dirname(TARGET_TS), { recursive: true });
   
   const content = `// This file is auto-generated from config.yaml. Do not edit directly.
-export const siteConfig = ${JSON.stringify(config.site || {}, null, 2)};
-export const projects = ${JSON.stringify(config.projects || [], null, 2)};
-export const experience = ${JSON.stringify(config.experience || [], null, 2)};
-export const education = ${JSON.stringify(config.education || {}, null, 2)};
-export const awards = ${JSON.stringify(config.awards || [], null, 2)};
-export const skills = ${JSON.stringify(config.skills || [], null, 2)};
-export const about_details = ${JSON.stringify(config.about_details || [], null, 2)};
-export const music = ${JSON.stringify(config.music || null, null, 2)};
-export const contact_link = ${JSON.stringify(config.contact_link || null, null, 2)};
+
+export interface SiteConfig {
+  name?: string;
+  username?: string;
+  bio?: string;
+  about_title?: string;
+  about_summary?: string;
+  avatar?: string;
+  location?: string;
+  company?: string;
+  email?: string;
+  website?: string;
+  github?: string;
+  youtube?: string;
+  achievements?: Array<{ emoji: string; title: string; [key: string]: any }>;
+  [key: string]: any;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description?: string;
+  tags?: string[];
+  slug?: string;
+  image?: string;
+  link?: string;
+  [key: string]: any;
+}
+
+export interface Experience {
+  id: string;
+  title: string;
+  role: string;
+  date: string;
+  points?: string[];
+  [key: string]: any;
+}
+
+export interface Education {
+  school?: string;
+  date?: string;
+  stats?: string[];
+  [key: string]: any;
+}
+
+export interface AboutDetail {
+  title: string;
+  icon?: string;
+  type?: string;
+  content?: string;
+  items?: Array<{ title: string; description?: string; [key: string]: any }>;
+  [key: string]: any;
+}
+
+export interface MusicTrack {
+  id: string;
+  title: string;
+  badge?: string;
+  description?: string;
+  src?: string;
+  [key: string]: any;
+}
+
+export interface MusicData {
+  featuredTrack?: MusicTrack;
+  musicTracks?: MusicTrack[];
+  [key: string]: any;
+}
+
+export const siteConfig: SiteConfig = ${JSON.stringify(config.site || {}, null, 2)};
+export const projects: Project[] = ${JSON.stringify(config.projects || [], null, 2)};
+export const experience: Experience[] = ${JSON.stringify(config.experience || [], null, 2)};
+export const education: Education = ${JSON.stringify(config.education || {}, null, 2)};
+export const awards: string[] = ${JSON.stringify(config.awards || [], null, 2)};
+export const skills: string[] = ${JSON.stringify(config.skills || [], null, 2)};
+export const about_details: AboutDetail[] = ${JSON.stringify(config.about_details || [], null, 2)};
+export const music: MusicData | null = ${JSON.stringify(config.music || null, null, 2)};
+export const contact_link: string | null = ${JSON.stringify(config.contact_link || null, null, 2)};
 `;
 
   fs.writeFileSync(TARGET_TS, content);

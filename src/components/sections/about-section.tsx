@@ -25,7 +25,7 @@ export function AboutSection() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full items-stretch">
                 {about_details.map((detail, idx) => {
-                    const IconComponent = (Icons as any)[detail.icon] || Icons.Code;
+                    const IconComponent = detail.icon ? (Icons as any)[detail.icon] || Icons.Code : Icons.Code;
                     
                     return (
                         <motion.div

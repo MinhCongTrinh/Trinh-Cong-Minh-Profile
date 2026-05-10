@@ -16,7 +16,7 @@ export function Hero() {
                 {(siteConfig.location || siteConfig.company) && (
                     <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-white dark:bg-card text-xs font-semibold text-muted tracking-wider mb-8 shadow-sm">
                         <div className="w-2 h-2 rounded-full bg-[#00bfff]" />
-                        {[siteConfig.location, siteConfig.company].filter(Boolean).map(s => s.toUpperCase()).join(' — ')}
+                        {[siteConfig.location, siteConfig.company].filter(Boolean).map(s => (s as string).toUpperCase()).join(' — ')}
                     </div>
                 )}
 
